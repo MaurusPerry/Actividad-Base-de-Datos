@@ -1,0 +1,49 @@
+/CHEQUEA SI API ESTA FUNCIONANDO
+GET http://localhost:9000/ HTTP/1.1
+
+###TRAE COMBOS COMPLETOS
+
+GET http://localhost:9000/platos/tipo/combo HTTP/1.1
+
+###AUTH
+
+###REGISTER
+POST http://localhost:9000/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+"nombre": "mauro",
+"apellido": "fiore", 
+"email": "maurofiore@gmail.com",
+"password": "1234"
+}
+
+###LOGIN
+POST http://localhost:9000/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "maurofiore@gmail.com",
+    "password": "1234"
+}
+
+### PEDIDOS
+
+
+###CREAR PEDIDO
+POST http://localhost:9000/pedidos/usuario/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    
+}
+
+### TRAER TODOS LOS PEDIDOS
+
+GET http://localhost:9000/pedidos HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzI2NzcxOTE3LCJleHAiOjE3MjY3NzM3MTd9.2nwhm0ITyQ8nZdVCpvX4kPTGhuGlxS218JEA8aCNO38
+### TRAER TODOS LOS PEDIDOS
+
+GET http://localhost:9000/pedidos/usuario HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI2NjY1MDI0LCJleHAiOjE3MjY2NjY4MjR9.MTBckcI116AmOuo6fMS1ASAu5HzjHnyEwSkenoj89D0
