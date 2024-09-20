@@ -39,7 +39,6 @@ export const verifyToken = async (req, res, next) => {
     } catch (error){
         res.status(500).json({message: message.error});
     }
-
 };
 
 export const verifyAdmin = async (req, res, next) => {
