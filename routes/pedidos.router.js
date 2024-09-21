@@ -14,9 +14,9 @@ const router = Router();
 router.get("/", verifyToken, PedidosController.getPedidos);
 router.get("/usuario", verifyToken, PedidosController.getPedidosByUser);
 router.get("/:id,", verifyToken, PedidosController.getPedidoById);
-router.post("/", verifyToken, verifyAdmin, PedidosController.createPedido);
+router.post("/", verifyToken, PedidosController.createPedido);
 router.put("/:id/aceptar", verifyToken, verifyAdmin, PedidosController.aceptarPedido);
-router.put("/:id/comenzar", verifyToken, verifyAdmin, PedidosController.aceptarPedido);
+router.put("/:id/comenzar", verifyToken, verifyAdmin, PedidosController.comenzarPedido);
 router.put("/:id/entregar", verifyToken, verifyAdmin, PedidosController.entregarPedido);
 router.delete("/", verifyToken, verifyAdmin, PedidosController.deletePedido)
 

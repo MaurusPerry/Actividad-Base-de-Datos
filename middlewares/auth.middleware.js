@@ -25,14 +25,14 @@ export const verifyToken = async (req, res, next) => {
             return res.status(400).json({message: "Formato invalido de token."});
 
         const payload = await jwt.verify(token, "secret");
-        console.log(payload);
+        //console.log(payload);
 
         if (!payload.id) 
             return res.status(400).json({ message: "El token no contiene un ID de usuario."});
     
         req.id = parseInt(payload.id);
 
-        console.log(req.id);
+        //console.log(req.id);
 
         next();
 
@@ -52,10 +52,11 @@ export const verifyAdmin = async (req, res, next) => {
     
     */
 
-    const id = req.params.id; 
+    const idUsuario = req.id; 
 
     try {
-        const usuario = await UsuariosService.getUsuarioById(id);
+        const usuario = await UsuariosService.getUsuarioById(idUsuario);
+
         if (!usuario.admin) 
             return res.status(403).json({ message: "Acceso denegado. No eres administrador." });
 

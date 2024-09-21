@@ -123,6 +123,7 @@ const createPedido = async (idUsuario, platos) => {
     const client = new Client(config);
     await client.connect();
 
+
     try {
         // ACÁ SE PODRÍA HACER EN ETAPAS
         // 1. Validar que los platos existan

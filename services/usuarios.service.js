@@ -24,14 +24,12 @@ const getUsuarioByEmail = async (email) => {
 const getUsuarioById = async (id) => {
     const client = new Client(config);
     await client.connect();
-
     try {
         const { rows } = await client.query(
             "SELECT * FROM usuarios WHERE id = $1",
             [id]
         );
         if (rows.length < 1) return null;
-
         await client.end();
         return rows[0];
     } catch (error) {
